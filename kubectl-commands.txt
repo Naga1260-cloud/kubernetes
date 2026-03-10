@@ -18,3 +18,12 @@ kubectl get pod
 
 kubectl get rs
 kubectl delete rs nginx-replicaset  #rs: replicaset
+kubectl apply -f nginx-deployment.yaml 
+ 
+kubectl get pod
+kubectl get deploy
+kubectl describe deployment.apps
+
+kubetcl delete deploment.apps nginx-deployment.yaml 
+kubectl delete deployments.apps nginx-deployment
+kubectl get deploy
