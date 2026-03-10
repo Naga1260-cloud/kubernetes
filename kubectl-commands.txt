@@ -1,5 +1,20 @@
 kubectl commands
+
 kubectl  config current-context
 kubectl get nodes
 kubectl get pod -n kube-system
 kubectl apply -f mypod.yaml
+kubectl get pods
+kubectl describe pod nginx-pod
+
+kubectl delete  pod nginx-pod
+kubectl get pods
+
+kubectl apply -f replicaset.yaml 
+kubectl get replicaset.apps
+kubectl get pod
+kubectl delete pod nginx-replicaset-xjsxg 
+kubectl get pod
+
+kubectl get rs
+kubectl delete rs nginx-replicaset  #rs: replicaset
