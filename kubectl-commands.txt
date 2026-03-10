@@ -1,0 +1,5 @@
+kubectl commands
+kubectl  config current-context
+kubectl get nodes
+kubectl get pod -n kube-system
+kubectl apply -f mypod.yaml

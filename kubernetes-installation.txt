@@ -1,4 +1,49 @@
+Installing Minikube on Ubuntu Linux
+
+1. update the existing machine
+
 sudo apt-get update -y
 sudo apt upgrade -y
+
+2. install docker
+
 sudo apt install docker.io -y
 
+3.Download and  Installing Minikube
+
+download minikube
+
+wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+Copy the Minikube binary to /usr/local/bin:
+
+sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+
+Give the Minikube executable the proper permissions:
+
+sudo chmod +x /usr/local/bin/minikube
+
+
+4.Installing kubectl : command-line utility
+
+Download the binary executable file:
+
+ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+
+Give the kubectl binary executable permission:
+
+chmod +x kubectl
+
+Move the kubectl binary to /usr/local/bin:
+
+sudo mv kubectl /usr/local/bin/
+
+Starting Minikube
+
+before starting minikube makesure current user is part of docker group
+
+sudo usermod -aG docker $USER && newgrp docker
+
+ minikube start --driver=docker
+
+echo $PATH , $PATH is the environmental variable which contain path of all executable files saparated by ;
