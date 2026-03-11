@@ -25,5 +25,31 @@ kubectl get deploy
 kubectl describe deployment.apps
 
 kubetcl delete deploment.apps nginx-deployment.yaml 
-kubectl delete deployments.apps nginx-deployment
-kubectl get deploy
+kubectl delete deployments.apps nginx-deployment  
+kubectl edit deploy nginx-deployment
+
+kubectl get pod --watch
+kubectl set image deployment/nginx-deployment nginx=nginx:1.21.0
+kubectl get pod
+
+kubectl describe deployment.apps nginx-deployment |grep -i  image
+kubectl rollout status deployment/nginx-deployment
+kubectl rollout undo deployment/nginx-deployment
+kubectl describe deployment.apps nginx-deployment |grep -i  image
+
+kubectl api-versions
+kubectl api-resoures
+kubectl api-resources |grep pod
+
+kubectl create ns custom-kubernets
+kubectl get pod -n kube-system
+kubectl get namespace
+kubectl get pod -n kube-public
+kubectl create ns test
+kubectl get ns
+ 
+kubectl get all -n  pod
+kubectl get all -n dev
+kubectl get pod --show-labels
+
+k8s networking
